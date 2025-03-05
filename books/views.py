@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Book
 from .forms import BookForm
 
@@ -32,3 +32,7 @@ def delete_book(request, book_id):
     if book:
         book.delete()
     return redirect('homepage')
+
+def book_detail(request, book_id):
+    book = get_object_or_404(Book, id=book_id)
+    return render(request, 'book_detail.html', {'book': book})

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Book Details{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-4">Book Details</h1>
+
+<div class="card shadow p-4">
+    <h2>{{ book.title }}</h2>
+    <h5>Author: {{ book.author }}</h5>
+    <p><strong>Description:</strong> {{ book.description }}</p>
+    <p><strong>Published Year:</strong> {{ book.published_year }}</p>
+
+    <div class="text-center mt-3">
+        <a href="{% url 'homepage' %}" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+{% endblock %}
